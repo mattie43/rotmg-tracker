@@ -72,9 +72,10 @@ export const Options = () => {
             <SelectValue className="capitalize" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="type">Type</SelectItem>
             <SelectItem value="difficulty">Difficulty</SelectItem>
             <SelectItem value="fame">Fame</SelectItem>
+            <SelectItem value="name">Name</SelectItem>
+            <SelectItem value="type">Type</SelectItem>
           </SelectContent>
         </Select>
       </div>

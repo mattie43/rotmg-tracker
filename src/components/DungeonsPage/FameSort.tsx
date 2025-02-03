@@ -12,7 +12,7 @@ export const FameSort = () => {
           <h3 className="text-xl font-bold border-b-2 border-primary w-fit">
             {`${item.name} (${item.fame} fame)`}
           </h3>
-          <div className="grid grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 w-full">
+          <div className="grid grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 w-full gap-y-4">
             {item.dungeonList.map((dungeon) => {
               const dung = ROTMG_COMBINED_DUNGEONS.find(
                 (d) => d.name === dungeon

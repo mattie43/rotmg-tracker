@@ -43,7 +43,7 @@ export const TypeSort = () => {
           <h3 className="text-xl font-bold border-b-2 border-primary w-fit">
             {item.header}
           </h3>
-          <div className="grid grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 w-full">
+          <div className="grid grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 w-full gap-y-4">
             {item.dungeons.map((dungeon) => (
               <SingleDungeon key={dungeon.name} dungeon={dungeon} />
             ))}

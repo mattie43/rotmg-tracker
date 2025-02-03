@@ -1,10 +1,5 @@
-import { Button } from "@/ui";
+import { redirect } from "next/navigation";
 
 export default function page() {
-  return (
-    <div>
-      root page
-      <Button>button</Button>
-    </div>
-  );
+  return redirect("/dungeons");
 }
