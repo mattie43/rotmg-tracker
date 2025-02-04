@@ -1,31 +1,36 @@
 "use client";
 
-import { SlidingPanel } from "@/components";
 import { useDungeonOptions } from "@/hooks";
 import { SkeletonLoader } from "./SkeletonLoader";
 import { Options } from "./Options";
-import { Info } from "lucide-react";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/ui";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 export const DungeonsPanel = () => {
   const { isLoading } = useDungeonOptions();
-
-  const info =
-    "Clicking on a dungeon name will bring you to the wiki page. Clicking on a dungeon image will 'mark' it as completed.";
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <SlidingPanel>
-      <div className="flex flex-col h-full items-center gap-2">
+    <div
+      className={`relative transition-all-25 border-r-2 border-primary ${
+        isOpen ? "w-[320px] py-4 px-4" : "w-[0px] py-4 px-0 -translate-x-[2px]"
+      }`}
+    >
+      <div className="flex flex-col gap-4 overflow-hidden whitespace-nowrap items-center">
         {isLoading ? <SkeletonLoader /> : <Options />}
-        <Tooltip>
-          <TooltipTrigger>
-            <Info />
-          </TooltipTrigger>
-          <TooltipContent side="bottom">
-            <p className="w-[280px] text-lg text-foreground">{info}</p>
-          </TooltipContent>
-        </Tooltip>
       </div>
-    </SlidingPanel>
+      <X
+        className={`transition-all-25 absolute right-1 top-1 ${
+          isOpen ? "" : "w-0"
+        }`}
+        onClick={() => setIsOpen(false)}
+      />
+      <Menu
+        className={`transition-all-25 absolute -right-8 top-1 ${
+          isOpen ? "w-0" : ""
+        }`}
+        onClick={() => setIsOpen(true)}
+      />
+    </div>
   );
 };

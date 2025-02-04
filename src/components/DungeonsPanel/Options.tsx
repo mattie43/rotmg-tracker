@@ -9,13 +9,36 @@ import {
 } from "@/ui";
 import { useDungeonOptions, type TOptions } from "@/hooks";
 
+type TSwitch = "showNames" | "showDifficulty" | "hideCompleted" | "hideGuide";
+
 export const Options = () => {
   const { options, setOptions } = useDungeonOptions();
-  const { showNames, showDifficulty, showCompleted } = options;
+  const { showNames, showDifficulty, hideCompleted, hideGuide } = options;
 
-  const handleSwitchChange = (
-    type: "showNames" | "showDifficulty" | "showCompleted"
-  ) => {
+  const switches = [
+    {
+      name: "Hide page guide",
+      checked: hideGuide,
+      key: "hideGuide",
+    },
+    {
+      name: "Show dungeon names",
+      checked: showNames,
+      key: "showNames",
+    },
+    {
+      name: "Show dungeon difficulty",
+      checked: showDifficulty,
+      key: "showDifficulty",
+    },
+    {
+      name: "Hide completed dungeons",
+      checked: hideCompleted,
+      key: "showCompleted",
+    },
+  ];
+
+  const handleSwitchChange = (type: TSwitch) => {
     setOptions((prev) => {
       return {
         ...prev,
@@ -44,27 +67,15 @@ export const Options = () => {
 
   return (
     <>
-      <span className="flex items-center gap-2">
-        Show dungeon names
-        <Switch
-          checked={showNames}
-          onClick={() => handleSwitchChange("showNames")}
-        />
-      </span>
-      <span className="flex items-center gap-2">
-        Show dungeon difficulty
-        <Switch
-          checked={showDifficulty}
-          onClick={() => handleSwitchChange("showDifficulty")}
-        />
-      </span>
-      <span className="flex items-center gap-2">
-        Hide completed dungeons
-        <Switch
-          checked={!showCompleted}
-          onClick={() => handleSwitchChange("showCompleted")}
-        />
-      </span>
+      {switches.map((item) => (
+        <span key={item.key} className="flex items-center gap-2">
+          {item.name}
+          <Switch
+            checked={item.checked}
+            onClick={() => handleSwitchChange(item.key as TSwitch)}
+          />
+        </span>
+      ))}
       <div className="flex items-center gap-2">
         <span>Sort by: </span>
         <Select value={options.sortBy} onValueChange={handleTypeChange}>

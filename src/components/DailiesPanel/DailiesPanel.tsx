@@ -1,6 +1,5 @@
 "use client";
 
-import { SlidingPanel } from "@/components";
 import {
   BEGINNER_QUESTS,
   EPIC_QUESTS,
@@ -94,42 +93,40 @@ export const DailiesPanel = () => {
   };
 
   return (
-    <SlidingPanel>
-      <div className="flex flex-col flex-1 overflow-auto gap-2 w-[300px]">
-        <Input
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          startIcon={<Search />}
-        />
-        <div className="flex flex-col flex-1 overflow-auto p-2 gap-1">
-          {allQuests.map((quest) => {
-            return (
-              <Fragment key={quest.title}>
-                <h3
-                  className={`text-xl font-bold border-b-2 border-primary w-fit ${
-                    quest.quests.length === 0 ? "hidden" : ""
-                  }`}
-                >
-                  {quest.title}
-                </h3>
-                {quest.quests.map((quest) => (
-                  <Item key={quest.task} name={quest.task} type="quest" />
-                ))}
-              </Fragment>
-            );
-          })}
-          <h3
-            className={`text-xl font-bold border-b-2 border-primary w-fit 
+    <div className="flex flex-col flex-1 overflow-auto gap-2 w-[300px]">
+      <Input
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        startIcon={<Search />}
+      />
+      <div className="flex flex-col flex-1 overflow-auto p-2 gap-1">
+        {allQuests.map((quest) => {
+          return (
+            <Fragment key={quest.title}>
+              <h3
+                className={`text-xl font-bold border-b-2 border-primary w-fit ${
+                  quest.quests.length === 0 ? "hidden" : ""
+                }`}
+              >
+                {quest.title}
+              </h3>
+              {quest.quests.map((quest) => (
+                <Item key={quest.task} name={quest.task} type="quest" />
+              ))}
+            </Fragment>
+          );
+        })}
+        <h3
+          className={`text-xl font-bold border-b-2 border-primary w-fit 
             ${alphaSort.length === 0 ? "hidden" : ""}
           `}
-          >
-            Dungeons
-          </h3>
-          {alphaSort.map((dungeon) => (
-            <Item key={dungeon.name} name={dungeon.name} type="dungeon" />
-          ))}
-        </div>
+        >
+          Dungeons
+        </h3>
+        {alphaSort.map((dungeon) => (
+          <Item key={dungeon.name} name={dungeon.name} type="dungeon" />
+        ))}
       </div>
-    </SlidingPanel>
+    </div>
   );
 };

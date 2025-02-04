@@ -5,17 +5,19 @@ import useSWR from "swr";
 const key = "dungeon-options";
 
 export type TOptions = {
+  hideGuide: boolean;
   showNames: boolean;
   showDifficulty: boolean;
-  showCompleted: boolean;
+  hideCompleted: boolean;
   sortBy: "difficulty" | "fame" | "name" | "type";
   completedList: string[];
 };
 
 const initialValue: TOptions = {
+  hideGuide: false,
   showNames: true,
   showDifficulty: true,
-  showCompleted: true,
+  hideCompleted: true,
   sortBy: "type",
   completedList: [],
 };
