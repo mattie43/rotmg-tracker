@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Toolbar } from "@/components";
+// import { Toolbar } from "@/components";
 import { TooltipProvider } from "@/ui";
 import "./globals.css";
 
@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-1 flex-col">
         <TooltipProvider delayDuration={200}>
-          <Toolbar />
+          {/* <Toolbar /> */}
           {children}
         </TooltipProvider>
       </body>
