@@ -1,8 +1,12 @@
 "use client";
 
-import { useStore } from "@/hooks";
+import { DungeonPanel, DungeonPage } from "@/components";
 
 export default function page() {
-  useStore();
-  return <div>dungeons dungeons dungeons dungeons dungeons dungeons</div>;
+  return (
+    <div className="flex flex-1 overflow-hidden">
+      <DungeonPanel />
+      <DungeonPage />
+    </div>
+  );
 }

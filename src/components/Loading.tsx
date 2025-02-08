@@ -8,12 +8,10 @@ export const Loading = () => {
   const { isLoading } = useStore();
   const randomClass = getRandomClass();
 
+  if (!isLoading) return null;
+
   return (
-    <dialog
-      className={`${
-        isLoading ? "" : "hidden"
-      } flex flex-col flex-1 items-center justify-center h-full w-full bg-background text-foreground`}
-    >
+    <dialog className="flex flex-col flex-1 items-center justify-center h-full w-full bg-background text-foreground">
       <div>
         <Image
           priority

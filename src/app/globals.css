@@ -41,6 +41,7 @@ body {
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --svg-fill: black;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -69,6 +70,7 @@ body {
       --chart-3: 30 80% 55%;
       --chart-4: 280 65% 60%;
       --chart-5: 340 75% 55%;
+      --svg-fill: white;
     }
   }
 }

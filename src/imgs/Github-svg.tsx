@@ -1,8 +1,4 @@
-"use client";
-
 export const GithubSVG = ({ size = 24 }: { size?: number }) => {
-  const dark = window?.matchMedia?.("(prefers-color-scheme: dark)")?.matches;
-
   return (
     <svg
       role="img"
@@ -11,7 +7,7 @@ export const GithubSVG = ({ size = 24 }: { size?: number }) => {
       style={{
         height: size,
         width: size,
-        fill: dark ? "white" : "black",
+        fill: "var(--svg-fill)",
       }}
     >
       <title>GitHub</title>

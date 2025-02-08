@@ -1,7 +1,9 @@
+"use client";
+
 import useSWR from "swr";
 
-type TStore = {
-  showPageGuide: boolean;
+export type TStore = {
+  showDungeonGuide: boolean;
   showDungeonNames: boolean;
   showDungeonDifficulty: boolean;
   hideCompletedDungeons: boolean;
@@ -12,7 +14,7 @@ type TStore = {
 const KEY = "rotmg-tracker-store";
 
 const defaultStore: TStore = {
-  showPageGuide: true,
+  showDungeonGuide: true,
   showDungeonNames: true,
   showDungeonDifficulty: true,
   hideCompletedDungeons: false,
@@ -52,11 +54,10 @@ export const useStore = () => {
       console.log("store", store);
       if (!store) return store;
       const newStore = { ...store };
-      newStore.showPageGuide = show;
+      newStore.showDungeonGuide = show;
       return newStore;
     });
   };
-  console.log("data", data);
 
   return { store: data, setStore, isLoading, updatePageGuide };
 };
