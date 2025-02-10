@@ -22,11 +22,6 @@ export const DungeonPanel = () => {
 
   const switches = [
     {
-      id: "showDungeonGuide",
-      label: "Show dungeon guide",
-      checked: store?.showDungeonGuide,
-    },
-    {
       id: "showDungeonNames",
       label: "Show dungeon names",
       checked: store?.showDungeonNames,
@@ -77,7 +72,7 @@ export const DungeonPanel = () => {
   };
 
   return (
-    <div className="flex flex-col h-full gap-4 border-r-2 border-primary p-4 min-w-[305px]">
+    <div className="flex flex-col h-full gap-4 border-r-2 border-primary p-4 min-w-[305px] items-center">
       {switches.map((item) => (
         <div key={item.label} className="flex gap-2 items-center">
           <span>{item.label}</span>

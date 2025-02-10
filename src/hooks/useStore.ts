@@ -3,23 +3,23 @@
 import useSWR from "swr";
 
 export type TStore = {
-  showDungeonGuide: boolean;
   showDungeonNames: boolean;
   showDungeonDifficulty: boolean;
   hideCompletedDungeons: boolean;
   sortDungeonsBy: "type" | "name" | "difficulty" | "fame";
   completedDungeons: string[];
+  tinkerDailies: string[];
 };
 
 const KEY = "rotmg-tracker-store";
 
 const defaultStore: TStore = {
-  showDungeonGuide: true,
   showDungeonNames: true,
   showDungeonDifficulty: true,
   hideCompletedDungeons: false,
   sortDungeonsBy: "type",
   completedDungeons: [],
+  tinkerDailies: [],
 };
 
 export const useStore = () => {
@@ -48,16 +48,5 @@ export const useStore = () => {
     }, false);
   };
 
-  const updatePageGuide = (show: boolean) => {
-    console.log("updatePageGuide", show);
-    mutate((store) => {
-      console.log("store", store);
-      if (!store) return store;
-      const newStore = { ...store };
-      newStore.showDungeonGuide = show;
-      return newStore;
-    });
-  };
-
-  return { store: data, setStore, isLoading, updatePageGuide };
+  return { store: data, setStore, isLoading };
 };

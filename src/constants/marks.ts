@@ -56,6 +56,10 @@ export const MARKS: Record<string, TMark> = {
     image: "https://i.imgur.com/IuK5OIq.png",
     link: "https://www.realmeye.com/wiki/mark-of-the-queen-bee",
   },
+  "Mark of the Bee Queen": {
+    image: "https://i.imgur.com/IuK5OIq.png",
+    link: "https://www.realmeye.com/wiki/mark-of-the-queen-bee",
+  },
   "Mark of the Sandstone Titan": {
     image: "https://i.imgur.com/pDZ40SZ.png",
     link: "https://www.realmeye.com/wiki/mark-of-the-sandstone-titan",
@@ -137,6 +141,10 @@ export const MARKS: Record<string, TMark> = {
     link: "https://www.realmeye.com/wiki/mark-of-janus",
   },
   "Mark of the Killer Bee Queen": {
+    image: "https://i.imgur.com/nx51H0q.png",
+    link: "https://www.realmeye.com/wiki/mark-of-the-killer-bee-queen",
+  },
+  "Mark of the Killer Queen Bee": {
     image: "https://i.imgur.com/nx51H0q.png",
     link: "https://www.realmeye.com/wiki/mark-of-the-killer-bee-queen",
   },

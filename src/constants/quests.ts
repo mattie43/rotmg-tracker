@@ -760,10 +760,32 @@ export const EPIC_QUESTS = [
   },
 ].sort((a, b) => a.task.localeCompare(b.task));
 
-export const COMBINED_QUESTS: TDailyQuest[] = [
-  ...SCOUT_QUESTS,
-  ...BEGINNER_QUESTS,
-  ...STRANDARD_QUESTS,
-  ...MIGHTY_QUESTS,
-  ...EPIC_QUESTS,
+export const COMBINED_QUESTS = [
+  {
+    subheader: "Scout Quests",
+    quests: SCOUT_QUESTS,
+  },
+  {
+    subheader: "Beginner Quests",
+    quests: BEGINNER_QUESTS,
+  },
+  {
+    subheader: "Standard Quests",
+    quests: STRANDARD_QUESTS,
+  },
+  {
+    subheader: "Mighty Quests",
+    quests: MIGHTY_QUESTS,
+  },
+  {
+    subheader: "Epic Quests",
+    quests: EPIC_QUESTS,
+  },
 ];
+
+export const QUESTS_OBJ = COMBINED_QUESTS.reduce((acc, obj) => {
+  obj.quests.forEach((quest) => {
+    acc[quest.task] = quest;
+  });
+  return acc;
+}, {} as { [key: string]: TDailyQuest });
