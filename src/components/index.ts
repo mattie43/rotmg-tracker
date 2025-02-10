@@ -4,3 +4,4 @@ export * from "./DungeonPanel/DungeonPanel";
 export * from "./DungeonPage/DungeonPage";
 export * from "./TinkerDailiesPanel/TinkerDailiesPanel";
 export * from "./TinkerDailiesPage/TinkerDailiesPage";
+export * from "./MapPanel/MapPanel";

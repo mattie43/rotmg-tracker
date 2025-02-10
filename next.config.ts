@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
       {
         hostname: "*imgur*",
       },
+      {
+        hostname: "*lh6.googleusercontent.com*",
+      },
     ],
   },
 };
