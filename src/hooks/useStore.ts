@@ -9,6 +9,7 @@ export type TStore = {
   sortDungeonsBy: "type" | "name" | "difficulty" | "fame";
   completedDungeons: string[];
   tinkerDailies: string[];
+  eventFilters: string[];
 };
 
 const KEY = "rotmg-tracker-store";
@@ -20,6 +21,7 @@ const defaultStore: TStore = {
   sortDungeonsBy: "type",
   completedDungeons: [],
   tinkerDailies: [],
+  eventFilters: [],
 };
 
 export const useStore = () => {
