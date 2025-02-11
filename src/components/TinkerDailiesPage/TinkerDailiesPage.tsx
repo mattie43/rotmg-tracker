@@ -9,11 +9,11 @@ export const DailiesPage = () => {
   const tinkerDailies = store?.tinkerDailies;
 
   const info =
-    "Select a tinker quest from the side panel to add it to your list. Clicking on a mark or reward item will bring you to the wiki page. Click on the 'X' will remove the quest from your list.";
+    "Select a tinkerer quest from the side panel to add it to your list. Clicking on a mark or reward will bring you to the wiki page. Click on the 'X' to remove the quest from your list.";
 
   return (
     <div className="flex flex-wrap flex-1 justify-center content-start gap-4 min-w-[600px] p-4 overflow-auto">
-      <div className="flex gap-4 px-24 items-center justify-center">
+      <div className="flex gap-4 px-24 items-center justify-center text-center">
         <span>
           <Info />
         </span>

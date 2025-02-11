@@ -35,7 +35,7 @@ export const DailyCard = ({
   };
 
   return (
-    <Card className="flex flex-col border-primary relative w-[400px]">
+    <Card className="flex flex-col border-primary relative w-[400px] rounded-none">
       <Button
         className="absolute top-2 right-2 text-foreground p-1 h-fit w-fit rounded-full"
         variant={"ghost"}

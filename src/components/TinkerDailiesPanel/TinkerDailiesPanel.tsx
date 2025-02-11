@@ -32,7 +32,7 @@ export const DailiesPanel = () => {
 
   return (
     <div className="flex flex-col border-r-2 border-primary p-4 overflow-auto min-w-[316px]">
-      <div className="sticky top-0 bg-background">
+      <div className="sticky top-0 bg-background shadow-md">
         <Input
           startIcon={<Search />}
           value={search}

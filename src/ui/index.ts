@@ -7,3 +7,4 @@ export * from "./input";
 export * from "./tooltip";
 export * from "./card";
 export * from "./tabs";
+export * from "./avatar";

@@ -19,7 +19,7 @@ type TEvent = {
   name: string;
 };
 
-export default function useEventTracker() {
+export const useEventTracker = () => {
   const url = "https://realmstock.network/Notifier/EventHistory";
 
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
@@ -76,4 +76,4 @@ export default function useEventTracker() {
   };
 
   return { topRealms: topRealms(), events: items(), isLoading, isValidating };
-}
+};

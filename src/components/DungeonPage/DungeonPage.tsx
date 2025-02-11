@@ -12,7 +12,7 @@ export const DungeonPage = () => {
 
   return (
     <div className="flex flex-col flex-1 overflow-auto p-4 gap-8">
-      <div className="flex gap-4 px-24 items-center justify-center">
+      <div className="flex gap-4 px-24 items-center justify-center text-center">
         <span>
           <Info />
         </span>

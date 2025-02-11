@@ -8,7 +8,7 @@ import { Button } from "@/ui";
 
 const links = [
   { name: "Dungeons", href: "/dungeons" },
-  { name: "Tinker Dailies", href: "/tinker-dailies" },
+  { name: "Tinkerer Dailies", href: "/tinkerer-dailies" },
   { name: "Map", href: "/map" },
   { name: "Events", href: "/events" },
 ];
