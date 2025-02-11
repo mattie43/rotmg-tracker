@@ -6,7 +6,7 @@ type TEventAPI = {
   value: string;
 };
 
-type TEvent = {
+export type TEvent = {
   eventId: string;
   realm: string;
   server: string;
@@ -32,23 +32,25 @@ export const useEventTracker = () => {
     if (!data) return [];
     const lineSplit = data.value.split("\n");
     const pipeSplit = lineSplit.map((item: string) => item.split("|"));
-    const obj = pipeSplit.map((item: string[]) => {
-      const name = EVENTS[item[0]] || DUNGEONS[item[0]] || "Unknown";
-      const realmCount = `${item[3]}/${item[1] === "Nexus" ? 200 : 85}`;
+    const obj = pipeSplit
+      .map((item: string[]) => {
+        const name = EVENTS[item[0]] || DUNGEONS[item[0]] || "Unknown";
+        const realmCount = `${item[3]}/${item[1] === "Nexus" ? 200 : 85}`;
 
-      return {
-        eventId: item[0],
-        realm: item[1],
-        server: item[2],
-        realmCount,
-        unknownNumber: Number(item[4]),
-        realmScore: Number(item[5]),
-        spawnTime: item[6],
-        uid: item[7],
-        unknownBoolean: item[8] === "True",
-        name,
-      };
-    });
+        return {
+          eventId: item[0],
+          realm: item[1],
+          server: item[2],
+          realmCount,
+          unknownNumber: Number(item[4]),
+          realmScore: Number(item[5]),
+          spawnTime: item[6],
+          uid: item[7],
+          unknownBoolean: item[8] === "True",
+          name,
+        };
+      })
+      .filter((i) => i.name !== "Unknown");
     return obj;
   };
 
