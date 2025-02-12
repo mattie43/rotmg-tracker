@@ -7,3 +7,5 @@ export * from "./TinkerDailiesPage/TinkerDailiesPage";
 export * from "./MapPanel/MapPanel";
 export * from "./EventsPanel/EventsPanel";
 export * from "./EventsPage/EventsPage";
+export * from "./DungeonDailiesPanel/DungeonDailiesPanel";
+export * from "./DungeonDailiesPage/DungeonDailiesPage";

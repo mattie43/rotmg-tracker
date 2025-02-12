@@ -9,6 +9,7 @@ export type TStore = {
   sortDungeonsBy: "type" | "name" | "difficulty" | "fame";
   completedDungeons: string[];
   tinkerDailies: string[];
+  dungeonDailies: string[];
   eventFilters: string[];
 };
 
@@ -21,6 +22,7 @@ const defaultStore: TStore = {
   sortDungeonsBy: "type",
   completedDungeons: [],
   tinkerDailies: [],
+  dungeonDailies: [],
   eventFilters: [],
 };
 
