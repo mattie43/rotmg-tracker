@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { GithubSVG, eyePNG } from "@/imgs";
+import { eyePNG } from "@/imgs";
 import { Button } from "@/ui";
 
 const links = [
@@ -35,14 +35,6 @@ export const Toolbar = () => {
       >
         <Image src={eyePNG} height={28} width={28} alt="RealmEye" />
         RealmEye Wiki
-      </Link>
-      <Link
-        href="https://github.com/mattie43/rotmg-tracker"
-        target="_blank"
-        className="flex gap-2 items-center"
-      >
-        <GithubSVG size={18} />
-        Github
       </Link>
     </div>
   );
