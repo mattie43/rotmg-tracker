@@ -80,11 +80,13 @@ export const Toolbar = () => {
 
   return (
     <>
-      <SideToolbar />
-      <div className="h-12 flex justify-center items-center gap-4 border-b-2 border-primary px-4 max-lg:hidden">
+      {/* <SideToolbar /> */}
+      <div className="h-12 flex justify-center items-center gap-4 border-b-2 border-primary px-4">
         <Tabs value={value} onValueChange={handleClick} disableBg>
           {links.map((link) => (
-            <Tab value={link.href}>{link.name}</Tab>
+            <Tab key={link.href} value={link.href}>
+              {link.name}
+            </Tab>
           ))}
         </Tabs>
         <Link
