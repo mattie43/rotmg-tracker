@@ -1,4 +1,4 @@
-import { BIOMES, DECA_BLOG_SRC, UPDATED_DROP_TABLE_SRC } from "@/constants";
+import { BIOMES, DECA_BLOG_SRC } from "@/constants";
 import { Info } from "lucide-react";
 import { Fragment } from "react";
 import Link from "next/link";
@@ -27,9 +27,6 @@ export const MapPanel = () => {
         <div className="flex flex-col">
           <Link href={DECA_BLOG_SRC} target="_blank">
             Map source
-          </Link>
-          <Link href={UPDATED_DROP_TABLE_SRC} target="_blank">
-            Updated drop table
           </Link>
         </div>
       </div>
