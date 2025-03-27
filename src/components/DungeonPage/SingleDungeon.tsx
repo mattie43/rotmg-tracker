@@ -69,6 +69,7 @@ export const SingleDungeon = ({ dungeon }: { dungeon: TDungeon }) => {
         height={64}
         width={64}
         onClick={handleImgClick}
+        unoptimized
         className="cursor-pointer hover:opacity-70"
       />
     </div>

@@ -72,7 +72,7 @@ export const DungeonPanel = () => {
   };
 
   return (
-    <div className="flex flex-col h-full gap-4 border-r-2 border-primary p-4 min-w-[305px] items-center">
+    <div className="flex flex-col h-full gap-4 border-r-2 border-primary p-4 min-w-[305px] items-center max-lg:hidden">
       {switches.map((item) => (
         <div key={item.label} className="flex gap-2 items-center">
           <span>{item.label}</span>

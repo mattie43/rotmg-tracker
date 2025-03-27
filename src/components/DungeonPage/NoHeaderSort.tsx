@@ -11,7 +11,7 @@ export const NoHeaderSort = ({ sort }: { sort: string }) => {
       : COMBINED_DUNGEONS_DIFFICULTY;
 
   return (
-    <div className="flex flex-wrap justify-center gap-4 min-w-[600px]">
+    <div className="flex flex-wrap justify-center gap-4">
       {items.map((dungeon) => (
         <SingleDungeon key={dungeon.name} dungeon={dungeon} />
       ))}
