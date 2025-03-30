@@ -13,7 +13,7 @@ const links = [
   { name: "Tinkerer Dailies", href: "/tinkerer-dailies" },
   { name: "Dungeon Dailies", href: "/dungeon-dailies" },
   { name: "Map", href: "/map" },
-  // { name: "Events", href: "/events" },
+  { name: "Events", href: "/events" },
 ];
 
 export const Toolbar = () => {
