@@ -4,9 +4,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { eyePNG } from "@/imgs";
-import { Button, Tab, Tabs } from "@/ui";
+import {
+  Button,
+  Tab,
+  Tabs,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/ui";
 import { useState } from "react";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { useStore } from "@/hooks";
 
 const links = [
   { name: "Dungeons", href: "/dungeons" },
@@ -14,12 +22,19 @@ const links = [
   { name: "Dungeon Dailies", href: "/dungeon-dailies" },
   { name: "Map", href: "/map" },
   { name: "Events", href: "/events" },
+  { name: "Feedback", href: "/feedback" },
 ];
 
 export const Toolbar = () => {
   const pathname = usePathname();
   const router = useRouter();
   const [value, setValue] = useState(pathname);
+  const { store, setStore } = useStore();
+  const showFeedbackTooltip = store?.showFeedbackTooltip;
+
+  const handleFeedbackClose = () => {
+    setStore((prev) => ({ ...prev, showFeedbackTooltip: false }));
+  };
 
   const handleClick = (value: string) => {
     setValue(value);
@@ -85,7 +100,19 @@ export const Toolbar = () => {
         <Tabs value={value} onValueChange={handleClick} disableBg>
           {links.map((link) => (
             <Tab key={link.href} value={link.href}>
-              {link.name}
+              <Tooltip open={link.href === "/feedback" && showFeedbackTooltip}>
+                <TooltipTrigger>{link.name}</TooltipTrigger>
+                <TooltipContent className="text-lg m-1 rounded-md flex items-center gap-2">
+                  Give me some feedback!
+                  <Button
+                    className="p-1 rounded-full"
+                    variant={"ghost"}
+                    onClick={handleFeedbackClose}
+                  >
+                    <X />
+                  </Button>
+                </TooltipContent>
+              </Tooltip>
             </Tab>
           ))}
         </Tabs>

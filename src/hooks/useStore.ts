@@ -11,6 +11,7 @@ export type TStore = {
   tinkerDailies: string[];
   dungeonDailies: string[];
   eventFilters: string[];
+  showFeedbackTooltip: boolean;
 };
 
 const KEY = "rotmg-tracker-store";
@@ -24,6 +25,7 @@ const defaultStore: TStore = {
   tinkerDailies: [],
   dungeonDailies: [],
   eventFilters: [],
+  showFeedbackTooltip: true,
 };
 
 export const useStore = () => {

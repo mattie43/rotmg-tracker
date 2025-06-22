@@ -4,10 +4,11 @@ import { X } from "lucide-react";
 
 type TInputProps = React.ComponentProps<"input"> & {
   startIcon?: React.ReactNode;
+  disableClearable?: boolean;
 };
 
 const Input = React.forwardRef<HTMLInputElement, TInputProps>(
-  ({ className, type, startIcon, ...props }, ref) => {
+  ({ className, type, startIcon, disableClearable, ...props }, ref) => {
     const [search, setSearch] = React.useState("");
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,7 +34,7 @@ const Input = React.forwardRef<HTMLInputElement, TInputProps>(
           {...props}
           onChange={handleChange}
         />
-        {search.length > 0 && (
+        {search.length > 0 && !disableClearable && (
           <X
             className="p-1 hover:bg-secondary rounded-full cursor-pointer active:opacity-90"
             onClick={handleClear}
