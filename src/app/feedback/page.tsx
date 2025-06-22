@@ -9,24 +9,32 @@ export default function Feedback() {
   const [tag, setTag] = useState("");
   const [comment, setComment] = useState("");
   const [showAlert, setShowAlert] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const send = async () => {
     if (!tag.trim() || !comment.trim()) return;
+
+    setLoading(true);
 
     const body = `\u200B\n
       Discord user: ${tag}
       Comment:\`\`\`${comment}\`\`\`
     `;
 
-    const resp = await discordWebhook(body);
+    try {
+      const resp = await discordWebhook(body);
 
-    if (resp) {
-      setShowAlert(true);
-      setTag("");
-      setComment("");
-      setTimeout(() => {
-        setShowAlert(false);
-      }, 3000);
+      if (resp) {
+        setShowAlert(true);
+        setTag("");
+        setComment("");
+        setTimeout(() => {
+          setShowAlert(false);
+        }, 3000);
+      }
+    } catch (_) {
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -58,7 +66,12 @@ export default function Feedback() {
           />
         </span>
       </div>
-      <Button size={"lg"} className="text-white" onClick={send}>
+      <Button
+        size={"lg"}
+        className="text-white"
+        onClick={send}
+        disabled={loading}
+      >
         Submit
       </Button>
       {showAlert && (
