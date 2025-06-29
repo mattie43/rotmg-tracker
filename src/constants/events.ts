@@ -141,6 +141,7 @@ export const DUNGEONS: { [key: string]: string } = {
 
 // Event ID + Name
 export const EVENTS: { [key: string]: string } = {
+  "1": "Staff Member",
   "1063": "Easter Egg Basket",
   "1064": "Easter Egg Basket",
   "1065": "Easter Egg Basket",
@@ -648,6 +649,7 @@ export const EVENT_OPTIONS = [
   "Skull Shrine",
   "Snow Shrine",
   "Snowy Frost God",
+  "Staff Member",
   "Sunken Treasure",
   "Sword in the Stone",
   "Temple Statue",

@@ -11,7 +11,8 @@ import {
 import React from "react";
 
 export const SingleEvent = React.memo(({ event }: { event: TEvent }) => {
-  const imgUrl = `https://realm.wiki/Sprite/ByObjectId?id=${event.eventId}`;
+  const objectImgUrl = `https://realm.wiki/Sprite/ByObjectId?id=${event.eventId}`;
+  const staffMemberImgUrl = "https://realm.wiki/Sprite/ByItemId?id=2323";
 
   function utcToLocalTime(timeStr: string) {
     // Split the string into hours and minutes
@@ -38,7 +39,10 @@ export const SingleEvent = React.memo(({ event }: { event: TEvent }) => {
       <CardHeader>
         <div className="flex gap-2 items-center">
           <Avatar className="rounded-none">
-            <AvatarImage src={imgUrl} alt={event.name} />
+            <AvatarImage
+              src={event.eventId === "1" ? staffMemberImgUrl : objectImgUrl}
+              alt={event.name}
+            />
           </Avatar>
           <div className="flex flex-col gap-1">
             <CardTitle>{event.name}</CardTitle>
