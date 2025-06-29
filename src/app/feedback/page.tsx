@@ -1,6 +1,6 @@
 "use client";
 
-import { Alert, AlertTitle, Button, Input, Textarea } from "@/ui";
+import { Alert, AlertTitle, Button, Checkbox, Input, Textarea } from "@/ui";
 import { useState } from "react";
 import { CheckCircle2Icon } from "lucide-react";
 import discordWebhook from "@/server_actions/discordWebhook";
@@ -8,6 +8,7 @@ import discordWebhook from "@/server_actions/discordWebhook";
 export default function Feedback() {
   const [tag, setTag] = useState("");
   const [comment, setComment] = useState("");
+  const [showName, setShowName] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -18,6 +19,7 @@ export default function Feedback() {
 
     const body = `\u200B\n
       Discord user: ${tag}
+      Show name: ${showName}
       Comment:\`\`\`${comment}\`\`\`
     `;
 
@@ -55,6 +57,14 @@ export default function Feedback() {
             className="rounded-md !text-2xl"
             disableClearable
           />
+        </span>
+        <span className="flex items-center gap-4 text-lg">
+          <Checkbox
+            checked={showName}
+            onCheckedChange={() => setShowName((prev) => !prev)}
+            className="size-4 fill-white"
+          />
+          You can show my name in the updates
         </span>
         <span className="flex flex-col gap-2 text-lg">
           Fix this please...

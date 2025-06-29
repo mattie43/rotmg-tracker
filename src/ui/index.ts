@@ -10,3 +10,5 @@ export * from "./tabs";
 export * from "./avatar";
 export * from "./alert";
 export * from "./textarea";
+export * from "./badge";
+export * from "./checkbox";
