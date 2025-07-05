@@ -10,9 +10,11 @@ export default function page() {
         <Card key={item.comment} className="w-fit p-4 rounded-lg">
           <CardDescription className="flex flex-col gap-2 text-center">
             <span>{new Date(item.timeStamp).toLocaleString()}</span>
-            <span>
-              @{item.user}: <i>{item.comment}</i>
-            </span>
+            {item.user && item.comment && (
+              <span>
+                @{item.user}: <i>{item.comment}</i>
+              </span>
+            )}
             <span className="text-white">{item.update}</span>
           </CardDescription>
         </Card>

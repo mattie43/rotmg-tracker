@@ -31,7 +31,10 @@ export const EventsPanel = () => {
 
   const events = EVENT_OPTIONS.filter((event) =>
     event.toLowerCase().includes(search.toLowerCase())
-  );
+  ).sort((a, b) => {
+    if (!eventFilters?.length) return 0;
+    return eventFilters?.indexOf(b) - eventFilters?.indexOf(a);
+  });
 
   return (
     <div className="flex flex-col border-r-2 border-primary p-4 overflow-auto min-w-[316px]">
