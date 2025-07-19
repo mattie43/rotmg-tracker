@@ -1,6 +1,13 @@
 // Put new items to top
 export const items = [
   {
+    user: "Anonymous",
+    comment: "add player count to realms <3",
+    update:
+      "Player count is now shown in the top realms list. I've also made it collapsable.",
+    timeStamp: 1751734060902,
+  },
+  {
     user: "",
     comment: "",
     update:

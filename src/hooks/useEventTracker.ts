@@ -60,6 +60,7 @@ export const useEventTracker = () => {
         server: string;
         realm: string;
         score: number;
+        realmCount: string;
       };
     };
     const reversed = items().reverse();
@@ -69,6 +70,7 @@ export const useEventTracker = () => {
         server: item.server,
         realm: item.realm,
         score: item.realmScore,
+        realmCount: item.realmCount,
       };
     });
     const sortedScores = Object.values(scores).sort(

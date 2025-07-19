@@ -7,7 +7,7 @@ export default function page() {
   return (
     <div className="flex flex-1 flex-col gap-4 p-4 items-center">
       {items.map((item) => (
-        <Card key={item.comment} className="w-fit p-4 rounded-lg">
+        <Card key={item.comment} className="p-4 rounded-lg w-[700px]">
           <CardDescription className="flex flex-col gap-2 text-center">
             <span>{new Date(item.timeStamp).toLocaleString()}</span>
             {item.user && item.comment && (

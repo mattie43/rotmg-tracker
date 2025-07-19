@@ -10,7 +10,7 @@ export const EventsPage = () => {
   const { events, isLoading } = useEventTracker();
   const eventFilters = store?.eventFilters;
   const info =
-    "Events refresh every 10 seconds. You can filter events by clicking on them in the side panel. All events are show by default. Top realm scores are not always accurate.";
+    "Events refresh every 10 seconds. You can filter events by clicking on them in the side panel. All events are show by default. Top realm scores are not always accurate. You can collapse the top realms list by clicking on the chevron to the left.";
 
   const filteredEvents = events.filter(
     (event) => eventFilters?.length === 0 || eventFilters?.includes(event.name)
