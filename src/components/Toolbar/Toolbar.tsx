@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { eyePNG } from "@/imgs";
 import { Badge, Tab, Tabs } from "@/ui";
 import { useState } from "react";
+import { updateItems } from "@/lib/updateItems";
 
 const links = [
   { name: "Dungeons", href: "/dungeons" },
@@ -17,10 +18,16 @@ const links = [
   { name: "Updates", href: "/updates" },
 ];
 
+const ONE_WEEK = 7 * 24 * 60 * 60 * 1000;
+
 export const Toolbar = () => {
   const pathname = usePathname();
   const router = useRouter();
   const [value, setValue] = useState(pathname);
+  const lastUpdateTime = updateItems[0].timeStamp;
+  const now = new Date().getTime();
+  const timeDiff = now - lastUpdateTime;
+  const showNewBadge = timeDiff < ONE_WEEK;
 
   const handleClick = (value: string) => {
     setValue(value);
@@ -33,7 +40,7 @@ export const Toolbar = () => {
         {links.map((link) => (
           <Tab key={link.href} value={link.href}>
             {link.name}
-            {link.href === "/updates" && (
+            {link.href === "/updates" && showNewBadge && (
               <Badge className="bg-pink-600 px-1 py-0 text-white ml-1">
                 NEW
               </Badge>

@@ -1,5 +1,5 @@
 // Put new items to top
-export const items = [
+export const updateItems = [
   {
     user: "Anonymous",
     comment: "add player count to realms <3",
